@@ -1,3 +1,12 @@
+snippet row_list
+alias rowl
+        rows_list = []
+        attribute_dict = {}
+        attribute_dict['${1:COLNAME}'] = ${2:VALUE}
+        rows_list.append(attribute_dict)
+        result_df = pd.DataFrame(rows_list)
+
+
 snippet subplots
 alias subp
   fig, axs = plt.subplots(${0:shape})
