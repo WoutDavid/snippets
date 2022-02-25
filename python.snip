@@ -35,6 +35,6 @@ alias rowl
 snippet subplots
 alias subp
   fig, axs = plt.subplots(${0:shape})
-  axs[${1:ax}] = plt.imshow(${2:image})
+  axs[${1:ax}].imshow(${2:image})
   plt.show()
 
