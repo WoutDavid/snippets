@@ -38,3 +38,22 @@ alias subp
   axs[${1:ax}].imshow(${2:image})
   plt.show()
 
+snippet gridsubplots
+alias grid
+    tot = ${1:totimgs}
+    cols = int(tot**0.5)
+    rows = tot // cols 
+    rows += tot % cols
+    position = range(1, tot+1)
+
+    fig = plt.figure(1)
+    for k in range(tot):
+        ax = fig.add_subplot(rows, cols, position[k])
+        ax.${2:plot}
+
+    plt.show()
+
+
+snippet imsave
+alias iomsv
+        io.imsave(${1:filename}, ${2:array}, check_contrast=False)
