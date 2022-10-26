@@ -1,3 +1,24 @@
+snippet documentclassarticle
+alias article
+        \\documentclass[${1:pt}]{${2:article}}
+
+        \\usepackage{amsmath}
+        \\usepackage[utf8]{inputenc} % Required for inputting international characters
+        \\usepackage[T1]{fontenc} % Output font encoding for international characters
+        \\usepackage{graphicx}
+        \\usepackage{subfig}
+
+        \\usepackage[left=1.5cm, right=1.5cm, top=2.0cm, bottom=2.0cm]{geometry}
+        \\usepackage[backend=biber, sorting=none,giveninits=true, maxnames=1]{biblatex}
+        \\addbibresource{${3:bibfile}.bib}
+
+
+
+        \\begin{document}
+
+        \\end{document}
+
+
 snippet figuretabsub
 alias figs
         \\begin{figure}
@@ -6,4 +27,5 @@ alias figs
                         \\subfloat[${4:cap2}]{\\includegraphics[width = 0.5\\linewidth]{${5:path2}}}
                 \\end{tabular}
         \\end{figure}
+
 

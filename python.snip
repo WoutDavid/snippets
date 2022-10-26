@@ -38,3 +38,67 @@ alias subp
   axs[${1:ax}].imshow(${2:image})
   plt.show()
 
+snippet gridsubplots
+alias grid
+    tot = ${1:totimgs}
+    cols = int(tot**0.5)
+    rows = tot // cols 
+    rows += tot % cols
+    position = range(1, tot+1)
+
+    fig = plt.figure(1)
+    for k in range(tot):
+        ax = fig.add_subplot(rows, cols, position[k])
+        ax.${2:plot}
+
+    plt.show()
+
+
+snippet imsave
+alias iomsv
+        io.imsave(${1:filename}, ${2:array}, check_contrast=False)
+
+snippet open_image
+alias skplot
+        from skimage import io
+        import matplotlib.pyplot as plt
+        import numpy as np
+
+        image = io.imread("${1:path}")
+
+
+snippet makedirs
+alias mkdir
+        os.makedirs(${1:out_dir}, exist_ok=True)
+snippet nacho
+alias nch
+        '/home/david/.config/nnn/mounts/nacho@10.38.76.144/'
+
+snippet spatial
+alias spt
+        import numpy as np
+        import pandas as pd
+        from skimage import io
+        import matplotlib.pyplot as plt
+
+snippet read_csv
+alias csv
+        df = pd.read_csv("${1:filename}")
+
+snippet imread
+alias imgr
+        image = io.imread("${1:filename}")
+
+snippet pickload
+alias picl
+        with open("${1:filename}", 'rb') as f:
+            ${2:var} = pickle.load(f)
+
+snippet pickdump
+alias picd
+        with open("${1:filename}", 'wb') as f:
+            pickle.dump(${2:var}, f)
+
+
+
+
